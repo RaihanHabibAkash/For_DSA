@@ -10,7 +10,7 @@ class SinglyLinkedList {
         this.head = head;
     }
 
-    inserAtEnd (val) {
+    append (val) {
         const newNode = new Node(val);
 
         if(this.head !== null){
