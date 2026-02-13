@@ -32,6 +32,7 @@ class SinglyLinkedList {
             console.log(current.info);
             current = current.next;
         }
+        console.log(current.info);
     }  
 
 }
