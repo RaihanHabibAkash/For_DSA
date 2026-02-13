@@ -1,6 +1,6 @@
 class Node {
-    constructor(info, next = null) {
-        this.info = info;
+    constructor(data, next = null) {
+        this.data = data;
         this.next = next;
     }
 }
@@ -29,10 +29,10 @@ class SinglyLinkedList {
         let current = this.head;
         
         while(current.next !== null) {
-            console.log(current.info);
+            console.log(current.data);
             current = current.next;
         }
-        console.log(current.info);
+        console.log(current.data);
     }  
 
 }
