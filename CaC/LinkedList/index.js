@@ -6,11 +6,11 @@ class Node {
 }
 
 class SinglyLinkedList {
-    constructor(head) {
+    constructor(head = null) {
         this.head = head;
     }
 
-    append (val) {
+    insertAtEnd(val) {
         const newNode = new Node(val);
 
         if(this.head === null){
@@ -24,7 +24,21 @@ class SinglyLinkedList {
         }
         current.next = newNode;
     }
-    
+
+    print(){
+        let current = this.head;
+        
+        while(current.next !== null) {
+            console.log(current.info);
+            current = current.next;
+        }
+    }  
+
 }
 
 const list = new SinglyLinkedList();
+
+list.insertAtEnd(10);
+list.insertAtEnd(20);
+list.insertAtEnd(40);
+list.print();
