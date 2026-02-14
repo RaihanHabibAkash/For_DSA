@@ -10,7 +10,7 @@ class SinglyLinkedList {
         this.head = head;
     }
 
-    insertAtEnd(val) {
+    append(val) {
         const newNode = new Node(val);
 
         if(this.head === null){
@@ -24,6 +24,8 @@ class SinglyLinkedList {
         }
         current.next = newNode;
     }
+
+
 
     print(){
         let current = this.head;
@@ -39,7 +41,7 @@ class SinglyLinkedList {
 
 const list = new SinglyLinkedList();
 
-list.insertAtEnd(10);
-list.insertAtEnd(20);
-list.insertAtEnd(40);
+list.append(10);
+list.append(20);
+list.append(40);
 list.print();
