@@ -70,6 +70,7 @@ class SinglyLinkedList {
         }
 
         while(current.next !== null) {
+            // If node found unlink the node
             if(current.data === val) {
                 prev.next = current.next;
                 return;
