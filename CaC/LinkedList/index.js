@@ -60,6 +60,30 @@ class SinglyLinkedList {
         }
     }
 
+    delete(val) {
+        let current = this.head;
+        let prev = current;
+
+        // If first element.
+        if(current.data === val) {
+            this.head = current.next;
+        }
+
+        while(current.next !== null) {
+            if(current.data === val) {
+                prev.next = current.next;
+                return;
+            } else {
+                prev = current;
+                current = current.next;
+            }
+        }
+        // If last element.
+        if(current.data === val) {
+            prev.next = null;
+        }
+    }
+
     reverse() {
         let prev = null;
         let current = this.head;
@@ -94,4 +118,5 @@ list.append(20);
 list.append(40);
 list.prepend(50);
 list.insertAtMid(5, 50);
+list.delete(40);
 list.print();
