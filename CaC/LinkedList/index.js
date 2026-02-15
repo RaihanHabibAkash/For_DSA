@@ -7,28 +7,57 @@ class Node {
 
 class SinglyLinkedList {
     constructor(head = null) {
+        // Header pointer
         this.head = head;
     }
 
     append(val) {
+        // Create new Node.
         const newNode = new Node(val);
 
+        // If the linked list is empy set newNode to head.
         if(this.head === null){
             this.head = newNode;
             return;
         }
 
+        // Set pointer current for traversing in the linked list.
         let current = this.head;
         while(current.next !== null) {
             current = current.next;
         }
+        // Set the current value next to new Node.
         current.next = newNode;
     }
 
     prepend(val) {
         const newNode = new Node(val);
+
+        // Set this newNode next to the current head pointer.
         newNode.next = this.head;
+
+        // Set the newNode to the new Head.
         this.head = newNode;
+    }
+
+
+    // Seraching and inseting at middle.
+    insertAtMid(val, target) {
+        const newNode = new Node(val);
+        let current = this.head;
+
+        while(current.next !== null) {
+            if(current.data !== target) {
+                current = current.next;
+            } else {
+                // new Node next will point the target node next.
+                newNode.next = current.next;
+
+                // New node will be the target Node next
+                current.next = newNode;
+                return;
+            }
+        }
     }
 
     reverse() {
@@ -64,4 +93,5 @@ list.append(10);
 list.append(20);
 list.append(40);
 list.prepend(50);
+list.insertAtMid(5, 50);
 list.print();
