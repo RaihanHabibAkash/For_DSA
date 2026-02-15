@@ -25,6 +25,12 @@ class SinglyLinkedList {
         current.next = newNode;
     }
 
+    prepend(val) {
+        const newNode = new Node(val);
+        newNode.next = this.head;
+        this.head = newNode;
+    }
+
     reverse() {
         let prev = null;
         let current = this.head;
@@ -57,5 +63,5 @@ const list = new SinglyLinkedList();
 list.append(10);
 list.append(20);
 list.append(40);
-list.reverse();
+list.prepend(50);
 list.print();
