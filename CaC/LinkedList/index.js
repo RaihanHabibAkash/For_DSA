@@ -85,6 +85,21 @@ class SinglyLinkedList {
         }
     }
 
+    shift() {
+        let current = this.head;
+        this.head = current.next;
+    }
+
+    pop() {
+        let current = this.head;
+        let prev = null;       
+        while(current.next !== null) {
+            prev = current;
+            current = current.next;
+        }
+        prev.next = null;
+    }
+
     reverse() {
         let prev = null;
         let current = this.head;
